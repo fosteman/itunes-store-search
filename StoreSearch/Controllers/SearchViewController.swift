@@ -48,9 +48,8 @@ extension SearchViewController: UISearchBarDelegate {
             searchResults = []
             let url = iTunesURL(searchBar.text!)
             if let response = performStoreRequest(with: url) {
-                print("Response: \(response)")
+                print("Response: \(parseResponse(response))")
             }
-            
             
             tableView.reloadData()
         }
@@ -105,13 +104,25 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         return URL(string: urlString)!
     }
     
-    func performStoreRequest(with url: URL) -> String? {
+    func performStoreRequest(with url: URL) -> Data? {
         do {
-            return try String(contentsOf: url, encoding: .utf8)
+            return try Data(contentsOf: url)
         }
         catch {
             print(error.localizedDescription)
             return nil
+        }
+    }
+    
+    func parseResponse(_ data: Data) -> [SearchResult] {
+        do {
+            let decoder = JSONDecoder()
+            let result = try decoder.decode(ResultsArray.self, from: data)
+            return result.results
+        }
+        catch {
+            print(error)
+            return []
         }
     }
 }
