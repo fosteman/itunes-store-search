@@ -95,6 +95,9 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         return !searchResults.isEmpty ? indexPath : nil
     }
     
+}
+
+extension SearchViewController {
     //MARK: Helpers
     
     func iTunesURL(_ searchText: String) -> URL {
@@ -110,6 +113,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         }
         catch {
             print(error.localizedDescription)
+            showNetworkError()
             return nil
         }
     }
@@ -124,5 +128,12 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             print(error)
             return []
         }
+    }
+    
+    func showNetworkError() {
+        let alert = UIAlertController(title: "Network Error", message: "There was an error fetching your request", preferredStyle: .alert)
+        let action = UIAlertAction(title: "...", style: .default, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
 }
