@@ -16,6 +16,7 @@
 		B83D748923D343B400A31B32 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83D748823D343B400A31B32 /* SearchResult.swift */; };
 		B8CCC43923D3490D0032E638 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8CCC43823D3490D0032E638 /* SearchResultCell.xib */; };
 		B8CCC43B23D34C790032E638 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CCC43A23D34C790032E638 /* SearchResultCell.swift */; };
+		B8CCC43D23D34F910032E638 /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8CCC43C23D34F910032E638 /* NothingFoundCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		B83D748823D343B400A31B32 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		B8CCC43823D3490D0032E638 /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 		B8CCC43A23D34C790032E638 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		B8CCC43C23D34F910032E638 /* NothingFoundCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +80,8 @@
 		B83D748A23D343F300A31B32 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B83D747823D33A7A00A31B32 /* SearchViewController.swift */,
 				B8CCC43A23D34C790032E638 /* SearchResultCell.swift */,
+				B83D747823D33A7A00A31B32 /* SearchViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				B8CCC43823D3490D0032E638 /* SearchResultCell.xib */,
+				B8CCC43C23D34F910032E638 /* NothingFoundCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				B83D748123D33A7C00A31B32 /* LaunchScreen.storyboard in Resources */,
 				B83D747E23D33A7C00A31B32 /* Assets.xcassets in Resources */,
 				B8CCC43923D3490D0032E638 /* SearchResultCell.xib in Resources */,
+				B8CCC43D23D34F910032E638 /* NothingFoundCell.xib in Resources */,
 				B83D747C23D33A7A00A31B32 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
