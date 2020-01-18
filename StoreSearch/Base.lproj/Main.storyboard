@@ -22,6 +22,9 @@
                             <searchBar contentMode="redraw" placeholder="Bridge name, road, city..." translatesAutoresizingMaskIntoConstraints="NO" id="mnx-oQ-bjb">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="0Km-Dl-t2s"/>
+                                </connections>
                             </searchBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
