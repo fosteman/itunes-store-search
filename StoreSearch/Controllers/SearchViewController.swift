@@ -42,14 +42,14 @@ class SearchViewController: UIViewController {
 extension SearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-        
-        searchResults = []
-        
-        //
-        
-        searchPerformed = true
-        tableView.reloadData()
+        if !searchBar.text!.isEmpty {
+            searchBar.resignFirstResponder()
+            searchPerformed = true
+            searchResults = []
+            let url = iTunesURL(searchBar.text!)
+            
+            tableView.reloadData()
+        }
     }
     
     func position(for bar: UIBarPositioning) -> UIBarPosition {
@@ -90,5 +90,14 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         return !searchResults.isEmpty ? indexPath : nil
+    }
+    
+    //MARK: Helpers
+    
+    func iTunesURL(_ searchText: String) -> URL {
+        let encoded = searchText.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        let urlString = String(format: "https://itunes.apple.com/search?term=%@", encoded)
+        
+        return URL(string: urlString)!
     }
 }
